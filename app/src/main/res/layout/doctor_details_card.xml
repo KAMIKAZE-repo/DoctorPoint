@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/radius"
+    android:layout_marginVertical="7dp"
+    android:layout_marginHorizontal="1dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/doctorDetailCardWidth"
+        android:layout_height="@dimen/doctorDetailCardHeight">
+
+        <ImageView
+            android:id="@+id/doctorImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_placeholder1" />
+
+        <TextView
+            android:id="@+id/doctorName"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:text="Dr. Mahmud Nik Hasan"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/doctorImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/state"
+            style="@style/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="4.9 (37 Reviews)"
+            android:textSize="8sp"
+            app:layout_constraintStart_toStartOf="@+id/doctorName"
+            app:layout_constraintTop_toBottomOf="@+id/doctorName"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/time"
+            style="@style/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" - Dhaka Medical College"
+            android:textSize="10sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/doctorSpec"
+            app:layout_constraintStart_toEndOf="@+id/doctorSpec" />
+
+        <TextView
+            android:id="@+id/type"
+            style="@style/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Hospital"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/doctorSpec" />
+
+        <TextView
+            android:id="@+id/doctorSpec"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cardiologist"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/type"
+            app:layout_constraintStart_toStartOf="@+id/state" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <activity
+        android:id="@+id/signInActivity"
+        android:name="com.example.testingapp.authentification.SignInActivity"
+        android:label="activity_signin"
+        tools:layout="@layout/activity_signin" />
+    <activity
+        android:id="@+id/appointmentDetailsActivity"
+        android:name="com.example.testingapp.appointment.appointmentdetails.AppointmentDetailsActivity"
+        android:label="activity_appointment_details"
+        tools:layout="@layout/activity_appointment_details" />
+    <activity
+        android:id="@+id/authenticationActivity"
+        android:name="com.example.testingapp.authentification.AuthenticationActivity"
+        android:label="activity_authentification"
+        tools:layout="@layout/activity_authentification" />
+    <activity
+        android:id="@+id/bookAppointmentActivity"
+        android:name="com.example.testingapp.appointment.bookappointment.BookAppointmentActivity"
+        android:label="activity_book_appointment_fragment_holer"
+        tools:layout="@layout/activity_book_appointment_fragment_holer" />
+    <activity
+        android:id="@+id/createAccountActivity"
+        android:name="com.example.testingapp.authentification.CreateAccountActivity"
+        android:label="activity_create_account"
+        tools:layout="@layout/activity_create_account" />
+    <activity
+        android:id="@+id/doctorDetailsActivity"
+        android:name="com.example.testingapp.searchfragment.doctordetails.DoctorDetailsActivity"
+        android:label="activity_doctor_details"
+        tools:layout="@layout/activity_doctor_details" />
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.example.testingapp.HomeActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <activity
+        android:id="@+id/onBoarding"
+        android:name="com.example.testingapp.onboarding.OnBoarding"
+        android:label="activity_on_boarding"
+        tools:layout="@layout/activity_on_boarding" />
+    <activity
+        android:id="@+id/reviewActivity"
+        android:name="com.example.testingapp.review.ReviewActivity"
+        android:label="activity_review"
+        tools:layout="@layout/activity_review" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.testingapp.homefragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/appointmentFragment"
+        android:name="com.example.testingapp.appointment.appointmentlist.AppointmentFragment"
+        android:label="fragment_appointment"
+        tools:layout="@layout/fragment_appointment" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.testingapp.notificationsfragment.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.testingapp.searchfragment.doctorlist.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.testingapp.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>

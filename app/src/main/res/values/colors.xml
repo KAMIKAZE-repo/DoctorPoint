@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <!--Colors defined-->
+    <color name="AppBackground">#f6f6f6</color>
+    <color name="PrimaryColor">#129a7f</color>
+    <color name="PrimaryText">#abadbd</color>
+    <color name="SecondaryText">#e3e3e4</color>
+    <color name="TextDescription">#DBDBDF</color>
+    <color name="Disabled">#c0e2db</color>
+    <color name="White">#fff</color>
+    <color name="color2">#5554db</color>
+    <color name="color3">#ffa873</color>
+    <color name="color4">#a079ec</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="selected_tab">#d2ece7</color>
+</resources>

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".appointment.bookappointment.appointmentconfigurations.AppointmentConfiguration">
+
+    <TextView
+        android:id="@+id/page_title"
+        style="@style/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:gravity="center"
+        android:text="Appointment"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/return_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:src="@android:drawable/ic_menu_revert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView17"
+        style="@style/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="10 June, Monday"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/return_button"
+        app:layout_constraintTop_toBottomOf="@+id/page_title" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/morning_button"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_state_background"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toStartOf="@+id/evening_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17">
+
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="@dimen/grand_icon_size"
+            android:layout_height="@dimen/grand_icon_size"
+            android:layout_marginStart="16dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_placeholder1" />
+
+        <TextView
+            android:id="@+id/textView29"
+            style="@style/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Morning"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/evening_button"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button_state_background"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/morning_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/morning_button"
+        app:layout_constraintTop_toTopOf="@+id/morning_button">
+
+        <TextView
+            android:id="@+id/textView38"
+            style="@style/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Evening"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_width="@dimen/grand_icon_size"
+            android:layout_height="@dimen/grand_icon_size"
+            android:layout_marginStart="16dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_placeholder1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/time_list_viewer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/morning_button" />
+
+    <TextView
+        android:id="@+id/textView40"
+        style="@style/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Fees Information"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/time_list_viewer" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/call_button"
+        android:layout_width="321dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/call_button_state"
+        app:layout_constraintEnd_toEndOf="@+id/messaging_button"
+        app:layout_constraintStart_toStartOf="@+id/messaging_button"
+        app:layout_constraintTop_toBottomOf="@+id/textView40">
+
+        <ImageView
+            android:id="@+id/phone_icon"
+            android:layout_width="@dimen/grand_icon_size"
+            android:layout_height="@dimen/grand_icon_size"
+            android:layout_marginStart="16dp"
+            android:scaleType="fitXY"
+            android:backgroundTint="@color/AppBackground"
+            android:background="@drawable/box_border"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.545"
+            app:srcCompat="@drawable/ic_phone_colored"/>
+
+        <TextView
+            android:id="@+id/call_price"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="$10"
+            android:textColor="@color/White"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/voice_call_title"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Voice Call"
+            android:textColor="@color/White"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/phone_icon"
+            app:layout_constraintTop_toTopOf="@+id/phone_icon" />
+
+        <TextView
+            android:id="@+id/voice_call_description"
+            style="@style/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Can make a voice call with doctor"
+            android:textColor="@color/White"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/voice_call_title"
+            app:layout_constraintTop_toBottomOf="@+id/voice_call_title"
+            tools:ignore="SmallSp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/vid_call_button"
+        android:layout_width="321dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/vid_call_button_state"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messaging_button">
+
+        <ImageView
+            android:id="@+id/camera_icon"
+            android:layout_width="@dimen/grand_icon_size"
+            android:layout_height="@dimen/grand_icon_size"
+            android:layout_marginStart="16dp"
+            android:scaleType="fitXY"
+            android:backgroundTint="@color/AppBackground"
+            android:background="@drawable/box_border"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.545"
+            app:srcCompat="@drawable/ic_videocam" />
+
+        <TextView
+            android:id="@+id/vid_price"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="$10"
+            android:textColor="@color/PrimaryColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/video_call_description"
+            style="@style/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Can make a video call with doctor"
+            android:textColor="@color/PrimaryText"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/video_call_title"
+            app:layout_constraintTop_toBottomOf="@+id/video_call_title"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/video_call_title"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Video call"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/camera_icon"
+            app:layout_constraintTop_toTopOf="@+id/camera_icon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/messaging_button"
+        android:layout_width="321dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/messaging_button_state"
+        app:layout_constraintEnd_toEndOf="@+id/vid_call_button"
+        app:layout_constraintStart_toStartOf="@+id/vid_call_button"
+        app:layout_constraintTop_toBottomOf="@+id/call_button">
+
+        <ImageView
+            android:id="@+id/message_icon"
+            android:layout_width="@dimen/grand_icon_size"
+            android:layout_height="@dimen/grand_icon_size"
+            android:layout_marginStart="16dp"
+            android:scaleType="fitXY"
+            android:backgroundTint="@color/AppBackground"
+            android:background="@drawable/box_border"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.545"
+            app:srcCompat="@drawable/ic_message" />
+
+        <TextView
+            android:id="@+id/message_price"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="$10"
+            android:textColor="@color/PrimaryColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/messaging_title"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Messaging"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/message_icon"
+            app:layout_constraintTop_toTopOf="@+id/message_icon" />
+
+        <TextView
+            android:id="@+id/messaging_description"
+            style="@style/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Can messaging with doctor"
+            android:textColor="@color/PrimaryText"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/messaging_title"
+            app:layout_constraintTop_toBottomOf="@+id/messaging_title"
+            tools:ignore="SmallSp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

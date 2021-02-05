@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">TestingApp</string>
+    <!--Defined Text-->
+    <string name="buttonText">Get Started</string>
+    <string name="skip">Skip for now</string>
+    <string name="nbrDoctors">%1$d Doctors</string>
+    <string name="ask_review">How was your experience with %1$s?</string>
+    <string name="recommand_ask">Would you recommand Dr.%1$s to your\nfriends?</string>
+
+    <string-array name="onBoardingTitles">
+        <item>Thousands of doctors</item>
+        <item>Live talk with doctor</item>
+        <item>Chat with doctors</item>
+    </string-array>
+    <string-array name="onBoardingDescription">
+        <item>Access thousands of Doctors instantly You can easily contact with doctors and contact for your needs.</item>
+        <item>Easily connect with doctor and start video chat for your better treatment &amp; Prescription.</item>
+        <item>Book an appointment with doctor chat with doctor via appointment letter Get consultant.</item>
+    </string-array>
+    <string-array name="months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
