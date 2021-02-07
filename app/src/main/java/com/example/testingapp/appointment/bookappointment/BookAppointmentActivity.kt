@@ -56,6 +56,22 @@ class BookAppointmentActivity : AppCompatActivity(), AppointmentConfiguration.Fr
                 nextButton.text = "Payment now"
                 viewPager.currentItem ++
             }else{
+                //partie graphique
+                consultTypeImage.setImageResource(
+                    when(consultType){
+                        "0" -> R.drawable.ic_phone_colored
+                        "1" -> R.drawable.ic_message
+                        "2" -> R.drawable.ic_videocam
+                        else -> R.drawable.img_placeholder1//or error image
+                    }
+                )
+                completedMsg.text = getString(R.string.complete_message, doctorName, when(consultType){
+                    "0" -> "Voice call"
+                    "1" -> "Message"
+                    "2" -> "Video call"
+                    else -> "Contact"
+                })
+                //partie graphique ends here
                 popUpWindow.visibility = View.VISIBLE
             }
         }
@@ -77,24 +93,8 @@ class BookAppointmentActivity : AppCompatActivity(), AppointmentConfiguration.Fr
     }
 
     fun onclick1(view: View){
-        //partie graphique
-        consultTypeImage.setImageResource(
-            when(consultType){
-                "0" -> R.drawable.ic_phone_colored
-                "1" -> R.drawable.ic_message
-                "2" -> R.drawable.ic_videocam
-                else -> R.drawable.img_placeholder1//or error image
-            }
-        )
-        completedMsg.text = getString(R.string.complete_message, doctorName, when(consultType){
-            "0" -> "Voice call"
-            "1" -> "Message"
-            "2" -> "Video call"
-            else -> "Contact"
-        })
-        //partie graphique ends here
         //sending request
-
+        postVolley()
         //ends here
         startActivity(Intent(this, HomeActivity::class.java))
     }
@@ -111,7 +111,7 @@ class BookAppointmentActivity : AppCompatActivity(), AppointmentConfiguration.Fr
 
     fun postVolley() {
         val queue = Volley.newRequestQueue(this)
-        val url = "localhost:3000/api/PostTest"
+        val url = "http://localhost:3000/api/PostTest"
 
         val requestBody = "doctorName=$doctorName&date=$consultDate%$consultTime&type=$type"
         val stringReq : StringRequest =
