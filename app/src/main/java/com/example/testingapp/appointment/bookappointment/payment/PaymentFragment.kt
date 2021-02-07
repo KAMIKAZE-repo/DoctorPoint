@@ -1,5 +1,7 @@
 package com.example.testingapp.appointment.bookappointment.payment
 
+import android.app.DatePickerDialog
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,9 +9,11 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.EditText
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import com.example.testingapp.R
+import java.util.*
 
 class PaymentFragment : Fragment() {
     private lateinit var name: EditText
@@ -23,6 +27,7 @@ class PaymentFragment : Fragment() {
 
     private lateinit var myView: View
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,11 +39,22 @@ class PaymentFragment : Fragment() {
         number.doOnTextChanged { text, _, _, _ ->
             cardNumber.text = text
         }
-        date.doOnTextChanged{ text, _, _, _ ->
-            cardDate.text = text
-        }
         cvv.doOnTextChanged { text, _, _, _ ->
             cardCVV.text = text
+        }
+
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        date.setOnClickListener {
+            val dpd = DatePickerDialog(myView.context, { _, year, monthOfYear, dayOfMonth ->
+                var fixedMonth = if(monthOfYear<10) "0$monthOfYear" else "$monthOfYear"
+                date.setText("$dayOfMonth-$fixedMonth-$year")
+                cardDate.text = "$dayOfMonth-$fixedMonth-$year"
+            }, year, month, day)
+            dpd.show()
         }
         return myView
     }
