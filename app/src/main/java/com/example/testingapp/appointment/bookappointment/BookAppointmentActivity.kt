@@ -34,7 +34,7 @@ class BookAppointmentActivity : AppCompatActivity(), AppointmentConfiguration.Fr
     private var doctorName = ""
     private var consultDate = ""
     private var consultTime = ""
-    private var consultType = ""
+    private var consultType = "0"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_appointment_fragment_holer)
@@ -100,16 +100,14 @@ class BookAppointmentActivity : AppCompatActivity(), AppointmentConfiguration.Fr
     }
 
     override fun onTimeClicked(time: String) {
-        Log.i("TAG", "time position: $time")
         consultTime = time
     }
 
     override fun onTypeClicked(type: Int) {
-        Log.i("TAG", "type: $type")//register consult type
         consultType = type.toString()
     }
 
-    fun postVolley() {
+    private fun postVolley() {
         val queue = Volley.newRequestQueue(this)
         val url = "http://localhost:3000/api/PostTest"
 

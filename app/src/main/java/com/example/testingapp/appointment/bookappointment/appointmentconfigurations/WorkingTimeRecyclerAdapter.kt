@@ -15,6 +15,11 @@ class WorkingTimeRecyclerAdapter(
 ): RecyclerView.Adapter<WorkingTimeRecyclerAdapter.ViewHolder>() {
 
     private var selectedPosition = 0
+
+    init {
+        myClickListener!!.onItemClicked(data[0])
+    }
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val time : TextView = view.findViewById(R.id.time_text)
     }

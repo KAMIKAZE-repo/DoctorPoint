@@ -119,12 +119,14 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="36dp"
-            android:scaleType="fitXY"
+            android:scaleType="center"
+            android:background="@drawable/dot_active"
+            android:backgroundTint="@color/selected_tab"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5"
-            app:srcCompat="@drawable/img_placeholder1" />
+            app:srcCompat="@drawable/ic_group_outline" />
 
         <ImageView
             android:id="@+id/imageView23"
