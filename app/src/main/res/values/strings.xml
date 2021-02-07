@@ -45,5 +45,7 @@
     <string name="terms_cond"><![CDATA[Terms & Conditions]]></string>
     <string name="name">Name</string>
     <string name="name_hint">Enter card holder full name</string>
-
+    <string name="complete_message">Your appointment booking successfully
+completed.Dr%1s will %1s
+you soon.</string>
 </resources>

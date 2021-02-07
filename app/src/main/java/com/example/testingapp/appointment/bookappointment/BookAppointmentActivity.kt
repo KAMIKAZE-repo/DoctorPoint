@@ -6,27 +6,43 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.example.testingapp.HomeActivity
 import com.example.testingapp.R
 import com.example.testingapp.appointment.bookappointment.appointmentconfigurations.AppointmentConfiguration
 import com.example.testingapp.appointment.bookappointment.patientdetails.PatientDetailsFragment
 import com.example.testingapp.appointment.bookappointment.payment.PaymentFragment
+import kotlinx.android.synthetic.main.appointment_card.*
+import java.lang.reflect.Method
+import java.nio.charset.Charset
 
 class BookAppointmentActivity : AppCompatActivity(), AppointmentConfiguration.FragmentListener{
     private lateinit var viewPager: ViewPager2
     private lateinit var frags: ArrayList<Fragment>
     private lateinit var nextButton: Button
     private lateinit var popUpWindow: ConstraintLayout
+    private lateinit var consultTypeImage: ImageView
+    private lateinit var completedMsg: TextView
+    private var doctorName = ""
+    private var consultDate = ""
+    private var consultTime = ""
+    private var consultType = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_appointment_fragment_holer)
         viewPager = findViewById(R.id.viewPager)
         popUpWindow = findViewById(R.id.complete_window)
         nextButton = findViewById(R.id.next)
+        consultTypeImage = findViewById(R.id.conuslt_type)
+        completedMsg = findViewById(R.id.completed_msg)
         viewPager.isUserInputEnabled = false
         frags = arrayListOf(AppointmentConfiguration(), PatientDetailsFragment(), PaymentFragment())
         val adapter = ViewPager(frags, supportFragmentManager, lifecycle)
@@ -44,11 +60,10 @@ class BookAppointmentActivity : AppCompatActivity(), AppointmentConfiguration.Fr
             }
         }
 
-        intent?.getStringExtra("DOCTOR_NAME")?.let { Log.i("TAG", it) }
-        intent?.getStringExtra("DATE")?.let { Log.i("TAG", it) }
+        doctorName = intent.getStringExtra("DOCTOR_NAME").toString()
+        consultDate = intent.getStringExtra("DATE").toString()
 
     }
-    //TODO("set the communication with fragments")
 
     override fun onBackPressed() {
         if(popUpWindow.visibility == View.VISIBLE){//that's mean we are at the last frag
@@ -62,15 +77,59 @@ class BookAppointmentActivity : AppCompatActivity(), AppointmentConfiguration.Fr
     }
 
     fun onclick1(view: View){
-        //TODO("send request to add appointment in DB")
+        //partie graphique
+        consultTypeImage.setImageResource(
+            when(consultType){
+                "0" -> R.drawable.ic_phone_colored
+                "1" -> R.drawable.ic_message
+                "2" -> R.drawable.ic_videocam
+                else -> R.drawable.img_placeholder1//or error image
+            }
+        )
+        completedMsg.text = getString(R.string.complete_message, doctorName, when(consultType){
+            "0" -> "Voice call"
+            "1" -> "Message"
+            "2" -> "Video call"
+            else -> "Contact"
+        })
+        //partie graphique ends here
+        //sending request
+
+        //ends here
         startActivity(Intent(this, HomeActivity::class.java))
     }
 
     override fun onTimeClicked(time: String) {
         Log.i("TAG", "time position: $time")
+        consultTime = time
     }
 
     override fun onTypeClicked(type: Int) {
         Log.i("TAG", "type: $type")//register consult type
+        consultType = type.toString()
+    }
+
+    fun postVolley() {
+        val queue = Volley.newRequestQueue(this)
+        val url = "localhost:3000/api/PostTest"
+
+        val requestBody = "doctorName=$doctorName&date=$consultDate%$consultTime&type=$type"
+        val stringReq : StringRequest =
+            object : StringRequest(
+                Method.POST, url,
+                Response.Listener { response ->
+                    // response
+                    var strResp = response.toString()
+                    Log.d("TAG", strResp)
+                },
+                Response.ErrorListener { error ->
+                    Log.d("TAG", "error => $error")
+                }
+            ){
+                override fun getBody(): ByteArray {
+                    return requestBody.toByteArray(Charset.defaultCharset())
+                }
+            }
+        queue.add(stringReq)
     }
 }
