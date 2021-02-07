@@ -113,7 +113,7 @@ class BookAppointmentActivity : AppCompatActivity(), AppointmentConfiguration.Fr
         val queue = Volley.newRequestQueue(this)
         val url = "http://localhost:3000/api/PostTest"
 
-        val requestBody = "doctorName=$doctorName&date=$consultDate%$consultTime&type=$type"
+        val requestBody = "doctorName=$doctorName&date=$consultDate%$consultTime&type=$consultType"
         val stringReq : StringRequest =
             object : StringRequest(
                 Method.POST, url,
