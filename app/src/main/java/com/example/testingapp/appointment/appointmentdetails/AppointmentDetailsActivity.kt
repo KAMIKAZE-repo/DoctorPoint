@@ -20,6 +20,7 @@ class AppointmentDetailsActivity : AppCompatActivity() {
         //either send a request to get data from DB or data passed from prev activity
         button.setOnClickListener {
             Intent(this, ReviewActivity::class.java).apply {
+                this.putExtra("DOCTOR_NAME",text.text.toString())
                 startActivity(this)
             }
         }
