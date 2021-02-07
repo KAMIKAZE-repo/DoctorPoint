@@ -34,7 +34,7 @@ class PaymentFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
-        myView =  inflater.inflate(R.layout.fragment_payment, container, false)
+        myView = inflater.inflate(R.layout.fragment_payment, container, false)
         initViews()
         number.doOnTextChanged { text, _, _, _ ->
             cardNumber.text = text
@@ -50,7 +50,7 @@ class PaymentFragment : Fragment() {
 
         date.setOnClickListener {
             val dpd = DatePickerDialog(myView.context, { _, year, monthOfYear, dayOfMonth ->
-                var fixedMonth = if(monthOfYear<10) "0$monthOfYear" else "$monthOfYear"
+                var fixedMonth = if (monthOfYear < 10) "0${monthOfYear+1}" else "${monthOfYear+1}"
                 date.setText("$dayOfMonth-$fixedMonth-$year")
                 cardDate.text = "$dayOfMonth-$fixedMonth-$year"
             }, year, month, day)
@@ -59,7 +59,7 @@ class PaymentFragment : Fragment() {
         return myView
     }
 
-    private fun initViews(){
+    private fun initViews() {
         name = myView.findViewById(R.id.full_name)
         number = myView.findViewById(R.id.card_number)
         date = myView.findViewById(R.id.date)
