@@ -10,10 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.testingapp.R
 
 class DaysRecyclerAdapter(
-    private val data: ArrayList<Pair<String, Int>>// data format [Pair("MON" to 10), Pair("Tue" to 11), ...], size == nbr of days
+    private val data: ArrayList<Pair<String, Pair<String, Int>>>, // data format [Pair("MON" to 10), Pair("Tue" to 11), ...], size == nbr of days
+    private val myClickListner : ClickListner?
 ) : RecyclerView.Adapter<DaysRecyclerAdapter.ViewHolder>() {
-    var selectedPosition = 0
 
+    private var selectedPosition = 0
     class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         var day : TextView = view.findViewById(R.id.day)
         var nbr : TextView = view.findViewById(R.id.nbr)
@@ -28,8 +29,8 @@ class DaysRecyclerAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.day.text = data[position].first
-        holder.nbr.text = data[position].second.toString()
+        holder.day.text = data[position].second.first
+        holder.nbr.text = data[position].second.second.toString()
         if(selectedPosition == position)
         {
             holder.layout.setBackgroundColor(holder.itemView.resources.getColor(R.color.PrimaryColor))
@@ -47,6 +48,7 @@ class DaysRecyclerAdapter(
             if (selectedPosition >= 0)
                 notifyItemChanged(selectedPosition);
             selectedPosition = holder.adapterPosition;
+            myClickListner!!.onItemClicked(selectedPosition)
             notifyItemChanged(selectedPosition);
         }
 
@@ -54,5 +56,10 @@ class DaysRecyclerAdapter(
 
     override fun getItemCount(): Int {
         return data.size
+    }
+
+
+    interface ClickListner{
+        fun onItemClicked(pos: Int)
     }
 }
