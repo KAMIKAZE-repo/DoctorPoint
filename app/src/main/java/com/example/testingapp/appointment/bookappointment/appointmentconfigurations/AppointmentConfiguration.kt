@@ -3,6 +3,7 @@ package com.example.testingapp.appointment.bookappointment.appointmentconfigurat
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +17,7 @@ import com.example.testingapp.R
 import com.example.testingapp.appointment.bookappointment.BookAppointmentActivity
 import com.example.testingapp.onboarding.OnBoardingScreenReusable
 
-class AppointmentConfiguration : Fragment() {
+class AppointmentConfiguration : Fragment(), WorkingTimeRecyclerAdapter.MyClickListener {
     private lateinit var morningButton: ConstraintLayout
     private lateinit var eveningButton: ConstraintLayout
 
@@ -25,8 +26,8 @@ class AppointmentConfiguration : Fragment() {
     private lateinit var vidCallChoice: ConstraintLayout
 
     private lateinit var timeGrid: RecyclerView
-    private lateinit var adapter1 : RecyclerView.Adapter<*>
-    private lateinit var adapter2 : RecyclerView.Adapter<*>
+    private lateinit var adapter1: RecyclerView.Adapter<*>
+    private lateinit var adapter2: RecyclerView.Adapter<*>
 
     private lateinit var callTitle: TextView
     private lateinit var callDescription: TextView
@@ -45,16 +46,35 @@ class AppointmentConfiguration : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-         myView = inflater.inflate(R.layout.fragment_testing, container, false)
-        val data1 = arrayListOf("09:00 AM", "09:30 AM", "10:30 AM", "11:15 AM", "09:00 AM", "09:30 AM", "10:30 AM", "11:15 AM")
-        val data2 = arrayListOf("02:00 PM", "03:00 PM", "03:30 PM", "04:30 PM", "02:00 PM", "03:00 PM", "03:30 PM", "04:30 PM")
+        myView = inflater.inflate(R.layout.fragment_testing, container, false)
+        val data1 = arrayListOf(
+            "09:00 AM",
+            "09:30 AM",
+            "10:30 AM",
+            "11:15 AM",
+            "09:00 AM",
+            "09:30 AM",
+            "10:30 AM",
+            "11:15 AM"
+        )
+        val data2 = arrayListOf(
+            "02:00 PM",
+            "03:00 PM",
+            "03:30 PM",
+            "04:30 PM",
+            "02:00 PM",
+            "03:00 PM",
+            "03:30 PM",
+            "04:30 PM"
+        )
 
         initComponents()
         timeGrid = myView.findViewById(R.id.time_list_viewer)
-        timeGrid.layoutManager = GridLayoutManager(myView.context, 4, GridLayoutManager.VERTICAL, false)
-        adapter1 = WorkingTimeRecyclerAdapter(data1)
-        adapter2 = WorkingTimeRecyclerAdapter(data2)
-        timeGrid.adapter = adapter1//init
+        timeGrid.layoutManager =
+            GridLayoutManager(myView.context, 4, GridLayoutManager.VERTICAL, false)
+        adapter1 = WorkingTimeRecyclerAdapter(data1, this)
+        adapter2 = WorkingTimeRecyclerAdapter(data2, this)
+        timeGrid.adapter = adapter1
         buttonClick()
         return myView
     }
@@ -87,14 +107,15 @@ class AppointmentConfiguration : Fragment() {
         vidPrice = myView.findViewById(R.id.vid_price)
     }
 
-    private fun buttonClick(){
+    private fun buttonClick() {
         timePeriodSelect(morningButton, adapter1)
         timePeriodSelect(eveningButton, adapter2)
         choiceSelect(callChoice, b1 = true, b2 = false, b3 = false)
-        choiceSelect(messagingChoice,b1 = false,b2 = true, b3 = false)
-        choiceSelect(vidCallChoice, b1  = false,b2 = false,b3 = true)
+        choiceSelect(messagingChoice, b1 = false, b2 = true, b3 = false)
+        choiceSelect(vidCallChoice, b1 = false, b2 = false, b3 = true)
     }
-    private fun choiceSelect(button: View, b1: Boolean, b2: Boolean, b3: Boolean){
+
+    private fun choiceSelect(button: View, b1: Boolean, b2: Boolean, b3: Boolean) {
         button.setOnClickListener {
             callChoice.isSelected = b1
             messagingChoice.isSelected = b2
@@ -105,39 +126,86 @@ class AppointmentConfiguration : Fragment() {
                     messageTitle, messageDescription, messagePrice,
                     vidTitle, vidDescription, vidPrice
                 )
+                activityCallBack.onTypeClicked(0)
             } else if (b2) {
                 changeTextsColors(
                     messageTitle, messageDescription, messagePrice,
                     callTitle, callDescription, callPrice,
                     vidTitle, vidDescription, vidPrice
                 )
+                activityCallBack.onTypeClicked(1)
             } else if (b3) {
                 changeTextsColors(
                     vidTitle, vidDescription, vidPrice,
                     messageTitle, messageDescription, messagePrice,
                     callTitle, callDescription, callPrice
                 )
+                activityCallBack.onTypeClicked(2)
             }
         }
     }
-    private fun timePeriodSelect(button: View, adapter: RecyclerView.Adapter<*>){
+
+    private fun timePeriodSelect(button: View, adapter: RecyclerView.Adapter<*>) {
         button.setOnClickListener {
             morningButton.isSelected = !morningButton.isSelected
             eveningButton.isSelected = !eveningButton.isSelected
             timeGrid.adapter = adapter
         }
     }
-    private fun changeTextColor(title: TextView, description: TextView,price: TextView, color: Int, color2: Int){
+
+    private fun changeTextColor(
+        title: TextView,
+        description: TextView,
+        price: TextView,
+        color: Int,
+        color2: Int
+    ) {
         title.setTextColor(color)
         description.setTextColor(color)
         price.setTextColor(color2)
     }
-    private fun changeTextsColors(text1Title: TextView,text1Description: TextView,price1: TextView,
-                                  text2Title: TextView,text2Description: TextView,price2: TextView,
-                                  text3Title: TextView,text3Description: TextView,price3: TextView
-    ){//text1 will be set to white
+
+    private fun changeTextsColors(
+        text1Title: TextView, text1Description: TextView, price1: TextView,
+        text2Title: TextView, text2Description: TextView, price2: TextView,
+        text3Title: TextView, text3Description: TextView, price3: TextView
+    ) {//text1 will be set to white
         changeTextColor(text1Title, text1Description, price1, Color.WHITE, Color.WHITE)
-        changeTextColor(text2Title, text2Description, price2, resources.getColor(R.color.PrimaryText), resources.getColor(R.color.PrimaryColor))
-        changeTextColor(text3Title, text3Description, price3, resources.getColor(R.color.PrimaryText), resources.getColor(R.color.PrimaryColor))
+        changeTextColor(
+            text2Title,
+            text2Description,
+            price2,
+            resources.getColor(R.color.PrimaryText),
+            resources.getColor(R.color.PrimaryColor)
+        )
+        changeTextColor(
+            text3Title,
+            text3Description,
+            price3,
+            resources.getColor(R.color.PrimaryText),
+            resources.getColor(R.color.PrimaryColor)
+        )
+    }
+
+
+    //setting communication with hostingActivity
+    interface FragmentListener {
+        fun onTimeClicked(time: String)
+        fun onTypeClicked(type: Int)
+    }
+
+    private lateinit var activityCallBack: FragmentListener
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        try {
+            activityCallBack = activity as FragmentListener
+        } catch (e: ClassCastException) {
+            throw ClassCastException(activity.toString() + " must implement ToolbarListener")
+        }
+    }
+
+    override fun onItemClicked(time: String) {
+        activityCallBack.onTimeClicked(time)
     }
 }

@@ -8,8 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testingapp.R
 
+
 class WorkingTimeRecyclerAdapter(
-    private val data: ArrayList<String>
+    private val data: ArrayList<String>,
+    private val myClickListener: MyClickListener?
 ): RecyclerView.Adapter<WorkingTimeRecyclerAdapter.ViewHolder>() {
 
     private var selectedPosition = 0
@@ -37,6 +39,7 @@ class WorkingTimeRecyclerAdapter(
             if (selectedPosition >= 0)
                 notifyItemChanged(selectedPosition);
             selectedPosition = holder.adapterPosition;
+            myClickListener!!.onItemClicked(data[selectedPosition])
             notifyItemChanged(selectedPosition);
         }
 
@@ -44,5 +47,9 @@ class WorkingTimeRecyclerAdapter(
 
     override fun getItemCount(): Int {
         return data.size
+    }
+
+    interface MyClickListener {
+        fun onItemClicked(time: String)
     }
 }

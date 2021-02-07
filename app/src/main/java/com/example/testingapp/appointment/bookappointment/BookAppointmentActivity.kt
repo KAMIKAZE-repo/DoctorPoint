@@ -16,7 +16,7 @@ import com.example.testingapp.appointment.bookappointment.appointmentconfigurati
 import com.example.testingapp.appointment.bookappointment.patientdetails.PatientDetailsFragment
 import com.example.testingapp.appointment.bookappointment.payment.PaymentFragment
 
-class BookAppointmentActivity : AppCompatActivity(){
+class BookAppointmentActivity : AppCompatActivity(), AppointmentConfiguration.FragmentListener{
     private lateinit var viewPager: ViewPager2
     private lateinit var frags: ArrayList<Fragment>
     private lateinit var nextButton: Button
@@ -28,7 +28,7 @@ class BookAppointmentActivity : AppCompatActivity(){
         popUpWindow = findViewById(R.id.complete_window)
         nextButton = findViewById(R.id.next)
         viewPager.isUserInputEnabled = false
-        frags = arrayListOf<Fragment>(AppointmentConfiguration(), PatientDetailsFragment(), PaymentFragment())
+        frags = arrayListOf(AppointmentConfiguration(), PatientDetailsFragment(), PaymentFragment())
         val adapter = ViewPager(frags, supportFragmentManager, lifecycle)
         viewPager.adapter = adapter
 
@@ -43,6 +43,10 @@ class BookAppointmentActivity : AppCompatActivity(){
                 popUpWindow.visibility = View.VISIBLE
             }
         }
+
+        intent?.getStringExtra("DOCTOR_NAME")?.let { Log.i("TAG", it) }
+        intent?.getStringExtra("DATE")?.let { Log.i("TAG", it) }
+
     }
     //TODO("set the communication with fragments")
 
@@ -60,5 +64,13 @@ class BookAppointmentActivity : AppCompatActivity(){
     fun onclick1(view: View){
         //TODO("send request to add appointment in DB")
         startActivity(Intent(this, HomeActivity::class.java))
+    }
+
+    override fun onTimeClicked(time: String) {
+        Log.i("TAG", "time position: $time")
+    }
+
+    override fun onTypeClicked(type: Int) {
+        Log.i("TAG", "type: $type")//register consult type
     }
 }

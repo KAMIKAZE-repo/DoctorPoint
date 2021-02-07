@@ -40,7 +40,8 @@ class DoctorDetailsActivity : AppCompatActivity() {
         bookButton = findViewById(R.id.book_appointment)
         bookButton.setOnClickListener {
             Intent(this, BookAppointmentActivity::class.java).let {
-                it.putExtra("DATE", "")//TODO("pass date picked")
+                it.putExtra("DATE", "10/2/2021")//TODO("pass date picked")
+                it.putExtra("DOCTOR_NAME", "Dr.Mahmoud Nik")//to be changed
                 startActivity(it)
             }
         }
