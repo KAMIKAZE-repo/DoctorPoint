@@ -99,8 +99,8 @@
             android:text="Patients"
             android:textColor="@color/White"
             android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView16"
-            app:layout_constraintStart_toEndOf="@+id/imageView16" />
+            app:layout_constraintBottom_toBottomOf="@+id/phoneLogo"
+            app:layout_constraintStart_toEndOf="@+id/phoneLogo" />
 
         <TextView
             android:id="@+id/nbr_patients"
@@ -112,10 +112,10 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/textView18"
             app:layout_constraintStart_toStartOf="@+id/textView18"
-            app:layout_constraintTop_toTopOf="@+id/imageView16" />
+            app:layout_constraintTop_toTopOf="@+id/phoneLogo" />
 
         <ImageView
-            android:id="@+id/imageView16"
+            android:id="@+id/phoneLogo"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="36dp"

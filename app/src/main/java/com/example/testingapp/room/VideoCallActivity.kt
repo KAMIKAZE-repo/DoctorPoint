@@ -104,10 +104,10 @@ class VideoCallActivity : AppCompatActivity() {
         val iv = view as ImageView
         if (iv.isSelected) {
             iv.isSelected = false
-            iv.clearColorFilter()
+            iv.setImageResource(R.drawable.ic_videocam_white)
         } else {
             iv.isSelected = true
-            iv.setColorFilter(resources.getColor(R.color.colorPrimary), PorterDuff.Mode.MULTIPLY)
+            iv.setImageResource(R.drawable.ic_videocam_off_white)
         }
 
         // Stops/Resumes sending the local video stream.
@@ -123,10 +123,10 @@ class VideoCallActivity : AppCompatActivity() {
         val iv = view as ImageView
         if (iv.isSelected) {
             iv.isSelected = false
-            iv.clearColorFilter()
+            iv.setImageResource(R.drawable.ic_mic_white)
         } else {
             iv.isSelected = true
-            iv.setColorFilter(resources.getColor(R.color.colorPrimary), PorterDuff.Mode.MULTIPLY)
+            iv.setImageResource(R.drawable.ic_mic_off_white)
         }
 
         // Stops/Resumes sending the local audio stream.

@@ -81,7 +81,7 @@
                 android:background="@drawable/box_border"
                 android:backgroundTint="#f61c52"
                 android:onClick="onEncCallClicked"
-                android:scaleType="fitCenter"
+                android:scaleType="centerInside"
                 android:src="@drawable/ic_call_end_white" />
 
         </LinearLayout>

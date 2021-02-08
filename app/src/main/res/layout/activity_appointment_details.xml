@@ -77,52 +77,54 @@
         android:layout_marginTop="190dp">
 
         <ImageView
-            android:id="@+id/imageView16"
+            android:id="@+id/phoneLogo"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:scaleType="fitXY"
+            android:scaleType="centerInside"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-            app:layout_constraintEnd_toStartOf="@+id/imageView17"
+            app:layout_constraintEnd_toStartOf="@+id/messageLogo"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/img_placeholder1" />
+            app:srcCompat="@drawable/ic_call_app_color" />
 
         <ImageView
-            android:id="@+id/imageView17"
+            android:id="@+id/messageLogo"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:scaleType="fitXY"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView16"
-            app:layout_constraintEnd_toStartOf="@+id/imageView20"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/phoneLogo"
+            app:layout_constraintEnd_toStartOf="@+id/videoLogo"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/imageView16"
-            app:layout_constraintTop_toTopOf="@+id/imageView16"
-            app:srcCompat="@drawable/img_placeholder1" />
+            app:layout_constraintStart_toEndOf="@+id/phoneLogo"
+            app:layout_constraintTop_toTopOf="@+id/phoneLogo"
+            app:srcCompat="@drawable/ic_message_ap_color" />
 
         <ImageView
-            android:id="@+id/imageView20"
+            android:id="@+id/videoLogo"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:scaleType="fitXY"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView17"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/messageLogo"
             app:layout_constraintEnd_toStartOf="@+id/imageView21"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/imageView17"
-            app:layout_constraintTop_toTopOf="@+id/imageView17"
-            app:srcCompat="@drawable/img_placeholder1" />
+            app:layout_constraintStart_toEndOf="@+id/messageLogo"
+            app:layout_constraintTop_toTopOf="@+id/messageLogo"
+            app:srcCompat="@drawable/ic_videocam_app_color" />
 
         <ImageView
             android:id="@+id/imageView21"
             android:layout_width="75dp"
             android:layout_height="75dp"
-            android:scaleType="fitXY"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView20"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="@+id/videoLogo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/imageView20"
-            app:layout_constraintTop_toTopOf="@+id/imageView20"
-            app:srcCompat="@drawable/img_placeholder1" />
+            app:layout_constraintStart_toEndOf="@+id/videoLogo"
+            app:layout_constraintTop_toTopOf="@+id/videoLogo"
+            app:srcCompat="@drawable/ic_alarm_white"
+            android:background="@drawable/box_border"
+            android:backgroundTint="@color/selected_tab_room"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
