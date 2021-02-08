@@ -112,6 +112,7 @@ class BookAppointmentActivity : AppCompatActivity(), AppointmentConfiguration.Fr
         val url = "http://localhost:3000/api/PostTest"
 
         val requestBody = "doctorName=$doctorName&date=$consultDate%$consultTime&type=$consultType"
+        Log.i("TAG", requestBody)
         val stringReq : StringRequest =
             object : StringRequest(
                 Method.POST, url,
