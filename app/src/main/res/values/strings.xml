@@ -48,4 +48,6 @@
     <string name="complete_message">Your appointment booking successfully
 completed.Dr%1s will %1s
 you soon.</string>
+    <string name="agora_app_id">580049a9575049a7a2830b235eb5b3b5</string>
+    <string name="agora_access_token">006580049a9575049a7a2830b235eb5b3b5IABZCvjYmqW/SNBr8DP3KHooY3RLBVm7k0+x+mKX+SYDtgSFb48AAAAAEABwjq6PCmwhYAEAAQAKbCFg</string>
 </resources>

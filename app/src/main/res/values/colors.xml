@@ -16,4 +16,5 @@
     <color name="color4">#a079ec</color>
     <color name="transparent">#00ffffff</color>
     <color name="selected_tab">#d2ece7</color>
+    <color name="selected_tab_room">#2aa48d</color>
 </resources>
