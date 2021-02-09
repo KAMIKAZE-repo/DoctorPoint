@@ -18,7 +18,7 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signin)
         text = findViewById(R.id.create_acc)
-        name = findViewById(R.id.email_field)
+        name = findViewById(R.id.username_field)
         signInButton = findViewById(R.id.create_account_button)
         passwordField = findViewById(R.id.password_field)
         text.setOnClickListener {

@@ -8,7 +8,7 @@
     tools:context=".authentification.SignInActivity">
 
     <EditText
-        android:id="@+id/email_field"
+        android:id="@+id/username_field"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -50,8 +50,8 @@
         android:layout_height="@dimen/small_icon_size"
         android:layout_marginTop="20dp"
         android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="@+id/email_field"
-        app:layout_constraintTop_toBottomOf="@+id/email_field"
+        app:layout_constraintStart_toStartOf="@+id/username_field"
+        app:layout_constraintTop_toBottomOf="@+id/username_field"
         app:srcCompat="@drawable/ic_password" />
 
     <ImageView
@@ -81,7 +81,7 @@
         android:layout_height="@dimen/small_icon_size"
         android:layout_marginTop="30dp"
         android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="@+id/email_field"
+        app:layout_constraintStart_toStartOf="@+id/username_field"
         app:layout_constraintTop_toBottomOf="@+id/imageView8"
         app:srcCompat="@drawable/ic_email" />
 

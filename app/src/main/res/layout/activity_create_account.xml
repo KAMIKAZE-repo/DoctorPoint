@@ -7,147 +7,6 @@
     android:background="@color/AppBackground"
     tools:context=".authentification.CreateAccountActivity">
 
-    <EditText
-        android:id="@+id/email_field"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:ems="10"
-        android:hint="example@gmail.com"
-        android:inputType="textEmailAddress"
-        android:paddingBottom="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
-
-
-    <ImageView
-        android:id="@+id/imageView19"
-        android:layout_width="@dimen/small_icon_size"
-        android:layout_height="@dimen/small_icon_size"
-        android:layout_marginTop="10dp"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="@+id/name_field"
-        app:layout_constraintTop_toBottomOf="@+id/name_field"
-        app:srcCompat="@drawable/ic_phone" />
-
-    <EditText
-        android:id="@+id/phone_number_field"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:ems="10"
-        android:hint="+216   Enter your phone number"
-        android:inputType="phone"
-        android:paddingBottom="15dp"
-        app:layout_constraintStart_toStartOf="@+id/imageView19"
-        app:layout_constraintTop_toBottomOf="@+id/imageView19" />
-
-    <TextView
-        android:id="@+id/textView16"
-        style="@style/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView18"
-        app:layout_constraintStart_toEndOf="@+id/imageView18" />
-
-    <ImageView
-        android:id="@+id/imageView18"
-        android:layout_width="@dimen/small_icon_size"
-        android:layout_height="@dimen/small_icon_size"
-        android:layout_marginTop="10dp"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="@+id/email_field"
-        app:layout_constraintTop_toBottomOf="@+id/email_field"
-        app:srcCompat="@drawable/ic_name" />
-
-    <EditText
-        android:id="@+id/name_field"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:ems="10"
-        android:hint="Enter your full name"
-        android:inputType="textPersonName"
-        android:paddingBottom="15dp"
-        app:layout_constraintStart_toStartOf="@+id/imageView18"
-        app:layout_constraintTop_toBottomOf="@+id/imageView18" />
-
-    <TextView
-        android:id="@+id/textView15"
-        style="@style/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Email"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-        app:layout_constraintStart_toEndOf="@+id/imageView9" />
-
-    <EditText
-        android:id="@+id/password_field"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:ems="10"
-        android:hint="Enter password"
-        android:inputType="textPassword"
-        android:paddingBottom="15dp"
-        app:layout_constraintStart_toStartOf="@+id/imageView10"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
-
-    <TextView
-        android:id="@+id/textView8"
-        style="@style/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Phone Number"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView19"
-        app:layout_constraintStart_toEndOf="@+id/imageView19" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="@dimen/small_icon_size"
-        android:layout_height="@dimen/small_icon_size"
-        android:layout_marginTop="10dp"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="@+id/phone_number_field"
-        app:layout_constraintTop_toBottomOf="@+id/phone_number_field"
-        app:srcCompat="@drawable/ic_password" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="140dp"
-        android:layout_height="105dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
-
-    <TextView
-        android:id="@+id/textView7"
-        style="@style/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Password"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
-        app:layout_constraintStart_toEndOf="@+id/imageView10" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="@dimen/small_icon_size"
-        android:layout_height="@dimen/small_icon_size"
-        android:layout_marginTop="30dp"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="@+id/email_field"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
-        app:srcCompat="@drawable/ic_email" />
 
     <Button
         android:id="@+id/create_account_button"
@@ -158,9 +17,9 @@
         android:background="@drawable/main_button_background"
         android:text="Create account"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_field" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
     <TextView
         android:id="@+id/forget_pass"
@@ -237,31 +96,340 @@
         app:layout_constraintEnd_toEndOf="@+id/create_account_button"
         app:layout_constraintStart_toEndOf="@+id/textView12" />
 
-    <ImageView
-        android:id="@+id/hide"
-        android:layout_width="@dimen/small_icon_size"
-        android:layout_height="@dimen/small_icon_size"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="12dp"
-        android:clickable="true"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@+id/password_field"
-        app:layout_constraintEnd_toEndOf="@+id/password_field"
-        app:srcCompat="@drawable/img_placeholder1" />
-
     <TextView
         android:id="@+id/sign_in_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
+        android:clickable="true"
+        android:focusable="true"
         android:text="Sign In"
         android:textColor="@color/PrimaryColor"
         app:layout_constraintBottom_toBottomOf="@+id/forget_pass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/forget_pass"
-        app:layout_constraintTop_toTopOf="@+id/forget_pass"
-        android:clickable="true"
-        android:focusable="true"/>
+        app:layout_constraintTop_toTopOf="@+id/forget_pass" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="404dp"
+        android:layout_height="350dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/patient_text_view">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/rib_text_view"
+                style="@style/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="RIB"
+                app:layout_constraintBottom_toBottomOf="@+id/rib_img"
+                app:layout_constraintStart_toEndOf="@+id/rib_img" />
+
+            <ImageView
+                android:id="@+id/rib_img"
+                android:layout_width="@dimen/small_icon_size"
+                android:layout_height="@dimen/small_icon_size"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="@+id/speciality_field"
+                app:layout_constraintTop_toBottomOf="@+id/speciality_field"
+                app:srcCompat="@drawable/ic_credit_card" />
+
+            <EditText
+                android:id="@+id/rib_field"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter RIB number"
+                android:inputType="number"
+                android:paddingBottom="15dp"
+                app:layout_constraintStart_toStartOf="@+id/rib_img"
+                app:layout_constraintTop_toBottomOf="@+id/rib_img" />
+
+            <TextView
+                android:id="@+id/spec_text_view"
+                style="@style/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Speciality"
+                app:layout_constraintBottom_toBottomOf="@+id/spec_img"
+                app:layout_constraintStart_toEndOf="@+id/spec_img" />
+
+            <ImageView
+                android:id="@+id/spec_img"
+                android:layout_width="@dimen/small_icon_size"
+                android:layout_height="@dimen/small_icon_size"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="@+id/matriculation_field"
+                app:layout_constraintTop_toBottomOf="@+id/matriculation_field"
+                app:srcCompat="@drawable/ic_specilaty" />
+
+            <ImageView
+                android:id="@+id/mat_img"
+                android:layout_width="@dimen/small_icon_size"
+                android:layout_height="@dimen/small_icon_size"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="@+id/birthday_field"
+                app:layout_constraintTop_toBottomOf="@+id/birthday_field"
+                app:srcCompat="@drawable/ic_matriculation" />
+
+            <EditText
+                android:id="@+id/username_field"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ems="10"
+                android:hint="Enter a username"
+                android:inputType="textEmailAddress"
+                android:paddingBottom="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="@dimen/small_icon_size"
+                android:layout_height="@dimen/small_icon_size"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="@+id/name_field"
+                app:layout_constraintTop_toBottomOf="@+id/name_field"
+                app:srcCompat="@drawable/ic_country" />
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="@dimen/small_icon_size"
+                android:layout_height="@dimen/small_icon_size"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="@+id/password_field"
+                app:layout_constraintTop_toBottomOf="@+id/password_field"
+                app:srcCompat="@drawable/ic_birthday" />
+
+            <EditText
+                android:id="@+id/country_field"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ems="10"
+                android:hint="Enter your country"
+                android:inputType="text"
+                android:paddingBottom="15dp"
+                app:layout_constraintStart_toStartOf="@+id/imageView19"
+                app:layout_constraintTop_toBottomOf="@+id/imageView19" />
+
+            <TextView
+                android:id="@+id/textView16"
+                style="@style/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Name"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView18"
+                app:layout_constraintStart_toEndOf="@+id/imageView18" />
+
+            <ImageView
+                android:id="@+id/imageView18"
+                android:layout_width="@dimen/small_icon_size"
+                android:layout_height="@dimen/small_icon_size"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="@+id/username_field"
+                app:layout_constraintTop_toBottomOf="@+id/username_field"
+                app:srcCompat="@drawable/ic_name" />
+
+            <EditText
+                android:id="@+id/name_field"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ems="10"
+                android:hint="Enter your full name"
+                android:inputType="textPersonName"
+                android:paddingBottom="15dp"
+                app:layout_constraintStart_toStartOf="@+id/imageView18"
+                app:layout_constraintTop_toBottomOf="@+id/imageView18" />
+
+            <TextView
+                android:id="@+id/textView15"
+                style="@style/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Username"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+                app:layout_constraintStart_toEndOf="@+id/imageView9" />
+
+            <EditText
+                android:id="@+id/password_field"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ems="10"
+                android:hint="Enter password"
+                android:inputType="textPassword"
+                android:paddingBottom="15dp"
+                app:layout_constraintStart_toStartOf="@+id/imageView10"
+                app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+
+            <EditText
+                android:id="@+id/birthday_field"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="ex: 14/07/1998"
+                android:inputType="text"
+                android:paddingBottom="15dp"
+                app:layout_constraintStart_toStartOf="@+id/imageView16"
+                app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+
+            <EditText
+                android:id="@+id/matriculation_field"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter your matriculation number"
+                android:inputType="number"
+                android:paddingBottom="15dp"
+                app:layout_constraintStart_toStartOf="@+id/mat_img"
+                app:layout_constraintTop_toBottomOf="@+id/mat_img" />
+
+            <EditText
+                android:id="@+id/speciality_field"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Enter your speciality"
+                android:inputType="text"
+                android:paddingBottom="15dp"
+                app:layout_constraintStart_toStartOf="@+id/spec_img"
+                app:layout_constraintTop_toBottomOf="@+id/spec_img" />
+
+            <TextView
+                android:id="@+id/textView8"
+                style="@style/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Country"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView19"
+                app:layout_constraintStart_toEndOf="@+id/imageView19" />
+
+            <TextView
+                android:id="@+id/textView48"
+                style="@style/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Date Of Birth"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView16"
+                app:layout_constraintStart_toEndOf="@+id/imageView16" />
+
+            <TextView
+                android:id="@+id/mat_text_view"
+                style="@style/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Matriculation"
+                app:layout_constraintBottom_toBottomOf="@+id/mat_img"
+                app:layout_constraintStart_toEndOf="@+id/mat_img" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="@dimen/small_icon_size"
+                android:layout_height="@dimen/small_icon_size"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="@+id/country_field"
+                app:layout_constraintTop_toBottomOf="@+id/country_field"
+                app:srcCompat="@drawable/ic_password" />
+
+            <TextView
+                android:id="@+id/textView7"
+                style="@style/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Password"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+                app:layout_constraintStart_toEndOf="@+id/imageView10" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="@dimen/small_icon_size"
+                android:layout_height="@dimen/small_icon_size"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="@+id/username_field"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_name" />
+
+            <ImageView
+                android:id="@+id/hide"
+                android:layout_width="@dimen/small_icon_size"
+                android:layout_height="@dimen/small_icon_size"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="12dp"
+                android:clickable="true"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="@+id/password_field"
+                app:layout_constraintEnd_toEndOf="@+id/password_field"
+                app:srcCompat="@drawable/img_placeholder1" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/patient_text_view"
+        style="@style/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/text_bottom_border"
+        android:text="Patient"
+        android:textColor="@color/PrimaryColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView38" />
+
+    <TextView
+        android:id="@+id/doctor_text_view"
+        style="@style/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="72dp"
+        android:text="Doctor"
+        android:textColor="@color/SecondaryText"
+        app:layout_constraintBottom_toBottomOf="@+id/patient_text_view"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView38"
+        android:layout_width="87dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

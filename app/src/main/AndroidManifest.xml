@@ -21,7 +21,8 @@
         <activity android:name=".searchfragment.doctordetails.DoctorDetailsActivity" />
         <activity android:name=".review.ReviewActivity" />
         <activity android:name=".appointment.appointmentdetails.AppointmentDetailsActivity" />
-        <activity android:name=".authentification.CreateAccountActivity" />
+        <activity android:name=".authentification.CreateAccountActivity"
+            android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".authentification.SignInActivity" />
         <activity android:name=".authentification.AuthenticationActivity" />
         <activity android:name=".onboarding.OnBoarding">
