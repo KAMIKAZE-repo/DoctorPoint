@@ -18,9 +18,9 @@ class OnBoarding : AppCompatActivity(), OnBoardingScreenReusable.FragmentListene
             "titles" to resources.getStringArray(R.array.onBoardingTitles),
             "descriptions" to resources.getStringArray(R.array.onBoardingDescription),
             "images" to arrayOf(//should be declared somewhere in xml
-                R.drawable.img_placeholder1.toString(),
-                R.drawable.img_placeholder2.toString(),
-                R.drawable.img_placeholder3.toString()
+                R.drawable.screen1.toString(),
+                R.drawable.screen2.toString(),
+                R.drawable.screen3.toString()
             )
         )
         viewPager2 = findViewById(R.id.viewPager)
